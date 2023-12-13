@@ -34,12 +34,12 @@ void fl_read(FILE *fd)
 }
 /**
  *finder- look for func
- *@opcode: opcode
+ *@opc: opcode
  *@value: argument
  *@format: struct or qu
  * @ln: line num
  */
-void finder(char *opcode, char *value, int ln, int format)
+void finder(char *opc, char *value, int ln, int format)
 {
 	int i, fl;
 
@@ -49,20 +49,20 @@ void finder(char *opcode, char *value, int ln, int format)
 		{NULL, NULL}
 	};
 
-	if (opcode[0] == '#')
+	if (opc[0] == '#')
 		return;
 
 	for (fl = 1, i = 0; func_list[i].opcode != NULL; i++)
 	{
-		if (strcmp(opcode, func_list[i].opcode) == 0)
+		if (strcmp(opc, func_list[i].opcode) == 0)
 		{
-			exec(func_list[i].f, opcode, value, ln, format);
+			exec(func_list[i].f, opc, value, ln, format);
 			fl = 0;
 		}
 	}
 	if (fl == 1)
 	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", ln, opcode);
+		fprintf(stderr, "L%d: unknown instruction %s\n", ln, opc);
 		freeall();
 			exit(EXIT_FAILURE);
 	}
