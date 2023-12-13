@@ -46,6 +46,7 @@ void finder(char *opc, char *value, int ln, int format)
 	instruction_t func_list[] = {
 		{"push", add_st},
 		{"pall", _pall},
+		{"pint", pint},
 		{NULL, NULL}
 	};
 
