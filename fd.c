@@ -55,21 +55,21 @@ void finder(char *opc, char *value, int ln, int format)
 		{NULL, NULL}
 	};
 
-	if (opc[0] == '#')
-		return;
-
-	for (fl = 1, i = 0; func_list[i].opcode != NULL; i++)
+	if (opc[0] != '#')
 	{
-		if (strcmp(opc, func_list[i].opcode) == 0)
+		for (fl = 1, i = 0; func_list[i].opcode != NULL; i++)
 		{
-			exec(func_list[i].f, opc, value, ln, format);
-			fl = 0;
+			if (strcmp(opc, func_list[i].opcode) == 0)
+			{
+				exec(func_list[i].f, opc, value, ln, format);
+				fl = 0;
+			}
 		}
-	}
-	if (fl == 1)
-	{
-		fprintf(stderr, "L%d: unknown instruction %s\n", ln, opc);
-		freeall();
+		if (fl == 1)
+		{
+			fprintf(stderr, "L%d: unknown instruction %s\n", ln, opc);
+			freeall();
 			exit(EXIT_FAILURE);
+		}
 	}
 }
