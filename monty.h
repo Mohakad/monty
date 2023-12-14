@@ -58,4 +58,6 @@ void pop(stack_t **stack, unsigned int line_number);
 void swp(stack_t **stack, unsigned int line_number);
 void add_two(stack_t **stack, unsigned int line_number);
 void nop(stack_t **, unsigned int);
+void sub(stack_t **stack, unsigned int line_number);
+
 #endif
