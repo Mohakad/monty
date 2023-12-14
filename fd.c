@@ -49,7 +49,7 @@ void finder(char *opc, char *value, int ln, int format)
 		{"pint", pint},
 		{"pop", pop},
 		{"swap", swp},
-		{"add", add_two},
+		{"add", add_two}, {"mod", mod},
 		{"sub", sub}, {"mul", mul_two},
 		{"nop", nop}, {"div", div_two},
 		{NULL, NULL}
