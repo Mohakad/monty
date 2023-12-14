@@ -10,7 +10,7 @@ void swp(stack_t **stack, unsigned int line_number)
 
 	if ((*stack)->next == NULL || *stack == NULL || stack == NULL)
 	{
-		fprintf(stderr, "L%d: can't %s, stack too short\n", line_number, "swap");
+		fprintf(stderr, "L%d: can't swap, stack too short\n", line_number);
 		freeall();
 		exit(EXIT_FAILURE);
 	}

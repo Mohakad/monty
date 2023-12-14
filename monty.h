@@ -56,4 +56,6 @@ void exec(funct, char *, char *, int, int);
 void pint(stack_t **stack, unsigned int line_number);
 void pop(stack_t **stack, unsigned int line_number);
 void swp(stack_t **stack, unsigned int line_number);
+void add_two(stack_t **stack, unsigned int line_number);
+
 #endif
